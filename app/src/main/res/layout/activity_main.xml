@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView2"
+        android:id="@+id/menuNavigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#D14242"
@@ -17,9 +17,10 @@
         app:menu="@menu/home_menu" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragmentContain"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView2"
+        app:layout_constraintBottom_toTopOf="@+id/menuNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
