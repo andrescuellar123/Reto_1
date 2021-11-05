@@ -5,75 +5,64 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:id="@+id/editarBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Editar"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="508dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descripción "
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="338dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="78dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/camera" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre del negocio"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="30dp" />
-
-    <EditText
-        android:id="@+id/editarNombreNegocio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nombre del negocio"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="70dp" />
+        android:layout_marginTop="40dp"
+        android:text="Ninguna imagen para mostrar"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="170dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <EditText
-        android:id="@+id/editarDescripcionNegocio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Descripción del negocio"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="373dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Foto del negocio"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="130dp" />
+        android:id="@+id/imageView3"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/edit" />
 
     <TextView
         android:id="@+id/textView4"
+        android:layout_width="334dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="88dp"
+        android:text="Inserte aqui una descripcion apropiada para su negocio."
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Perfil"
+        android:layout_marginTop="164dp"
+        android:text="Negocio por defecto"
+        android:textAllCaps="false"
+        android:textColor="#D14242"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="177dp" />
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
