@@ -2906,7 +2906,7 @@ instanceKlass org/gradle/tooling/provider/model/internal/ToolingModelBuilderLook
 instanceKlass org/gradle/plugins/ide/internal/tooling/ToolingModelServices$BuildScopeToolingServices$1
 instanceKlass org/gradle/api/internal/artifacts/ivyservice/projectmodule/DefaultProjectPublicationRegistry
 instanceKlass org/gradle/api/internal/project/DefaultProjectTaskLister
-instanceKlass org/gradle/jvm/toolchain/internal/task/ShowToolchainsTaskConfigurator$$Lambda$380
+instanceKlass org/gradle/jvm/toolchain/internal/post/ShowToolchainsTaskConfigurator$$Lambda$380
 instanceKlass org/gradle/tooling/internal/protocol/events/InternalProjectConfigurationResult$InternalPluginApplicationResult
 instanceKlass org/gradle/tooling/internal/provider/runner/ClientForwardingProjectConfigurationOperationListener$ProjectConfigurationResult$$Lambda$379
 instanceKlass org/gradle/tooling/internal/provider/runner/ClientForwardingProjectConfigurationOperationListener$PluginApplicationResult
@@ -3078,7 +3078,7 @@ instanceKlass org/gradle/configuration/project/BuildScriptProcessor
 instanceKlass org/gradle/buildinit/plugins/internal/action/WrapperPluginAutoApplyAction
 instanceKlass org/gradle/buildinit/plugins/internal/action/BuildInitAutoApplyAction
 instanceKlass org/gradle/kotlin/dsl/tooling/builders/KotlinScriptingModelBuildersRegistrationAction
-instanceKlass org/gradle/jvm/toolchain/internal/task/ShowToolchainsTaskConfigurator
+instanceKlass org/gradle/jvm/toolchain/internal/post/ShowToolchainsTaskConfigurator
 instanceKlass org/gradle/api/plugins/internal/HelpTasksAutoApplyAction
 instanceKlass org/gradle/configuration/project/ConfigureActionsProjectEvaluator
 instanceKlass org/gradle/initialization/buildsrc/BuildSrcDetector

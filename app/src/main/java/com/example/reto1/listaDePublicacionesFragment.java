@@ -18,12 +18,12 @@ import android.view.ViewGroup;
 public class listaDePublicacionesFragment extends Fragment implements  NewItemFragment.OnNewItemListener{
 
     //State
-    private TaskAdapter adapter;
+    private PostAdapter adapter;
 
 
     public listaDePublicacionesFragment() {
         // Required empty public constructor
-        adapter = new TaskAdapter();
+        adapter = new PostAdapter();
     }
 
 

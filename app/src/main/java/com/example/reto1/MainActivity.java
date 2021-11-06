@@ -6,14 +6,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     private PerfilFragment perfilFragment;
-    private PublicacionFragment publicacionFragment;
+    private PostFragment publicationFragment;
     private MapsFragment mapsFragment;
 
     private BottomNavigationView bttNavigation;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         bttNavigation = findViewById(R.id.menuNavigation);
         functionMenu();
         perfilFragment = PerfilFragment.newInstance();
-        publicacionFragment = PublicacionFragment.newInstance();
+        publicationFragment = PostFragment.newInstance();
         mapsFragment = MapsFragment.newInstance();
 
 
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 showFragment(perfilFragment);
             }
             else if(menuItem.getItemId() == R.id.postItem){
-                showFragment(publicacionFragment);
+                showFragment(publicationFragment);
             }
             else if(menuItem.getItemId() == R.id.mapsItem){
                 showFragment(mapsFragment);

@@ -6,12 +6,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class TaskViewHolder extends RecyclerView.ViewHolder {
+public class PostViewHolder extends RecyclerView.ViewHolder {
 
 
     private TextView taskRow;
 
-    public TaskViewHolder( View itemView) {
+    public PostViewHolder(View itemView) {
         super(itemView);
         taskRow = itemView.findViewById(R.id.taskrow);
     }
