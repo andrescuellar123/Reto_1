@@ -11,10 +11,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private PerfilFragment perfilFragment;
-    private PostFragment publicationFragment;
-    private MapsFragment mapsFragment;
+    //FRAGMENTS
+    private PerfilFragment perfilFragment; // perfil solito
+    private PostWithoutFragment postWithoutFragment; //primer post
+    private MapsFragment mapsFragment; //
+    private Fragment_perfil_edit perfilEdit; // editar perfil
+    private PublicacionFragment publicacionFragment; // lista de publicaciones
 
+    //elements UI
     private BottomNavigationView bttNavigation;
 
     @Override
@@ -24,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         bttNavigation = findViewById(R.id.menuNavigation);
         functionMenu();
         perfilFragment = PerfilFragment.newInstance();
-        publicationFragment = PostFragment.newInstance();
+        postWithoutFragment = PostWithoutFragment.newInstance();
         mapsFragment = MapsFragment.newInstance();
 
 
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 showFragment(perfilFragment);
             }
             else if(menuItem.getItemId() == R.id.postItem){
-                showFragment(publicationFragment);
+                showFragment(postWithoutFragment);
             }
             else if(menuItem.getItemId() == R.id.mapsItem){
                 showFragment(mapsFragment);

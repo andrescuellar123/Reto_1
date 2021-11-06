@@ -8,14 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class fragment_perfil_edit extends Fragment {
+public class Fragment_perfil_edit extends Fragment {
 
-    public fragment_perfil_edit() {
+    public Fragment_perfil_edit() {
         // Required empty public constructor
     }
 
-    public static fragment_perfil_edit newInstance() {
-        fragment_perfil_edit fragment = new fragment_perfil_edit();
+    public static Fragment_perfil_edit newInstance() {
+        Fragment_perfil_edit fragment = new Fragment_perfil_edit();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

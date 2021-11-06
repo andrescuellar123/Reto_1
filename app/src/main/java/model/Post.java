@@ -8,7 +8,7 @@ public class Post {
     private String location;
     private String businessName;
     private String UriImage;
-//TODO poner coordenadas y hacer guetter
+//TODO poner coordenadas, hacer guetter y actualizar construcctor
     public Post(String postName, String dateStart, String dateEnd, String location) {
         this.postName = postName;
         this.dateStart = dateStart;
