@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/nombreDelEventoTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
@@ -51,10 +51,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/nombreDelEventoTxt" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/ubicacionBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -65,7 +65,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/ubicacionTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -76,7 +76,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/ubicacionBtn" />
 
         <TextView
             android:id="@+id/textView8"
@@ -88,10 +88,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/ubicacionTxt" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/hFinTxt"
             android:layout_width="143dp"
             android:layout_height="52dp"
             android:layout_marginTop="30dp"
@@ -103,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/hInicioTxt"
             android:layout_width="143dp"
             android:layout_height="52dp"
             android:layout_marginStart="40dp"
@@ -111,13 +111,13 @@
             android:ems="10"
             android:hint="Inicio"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName4"
+            app:layout_constraintEnd_toStartOf="@+id/hFinTxt"
             app:layout_constraintHorizontal_bias="0.387"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/crearEventoBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
