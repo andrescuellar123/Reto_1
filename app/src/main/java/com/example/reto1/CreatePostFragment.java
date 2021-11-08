@@ -1,27 +1,25 @@
 package com.example.reto1;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
+import androidx.fragment.app.Fragment;
+
+import model.Post;
 
 
 public class CreatePostFragment extends Fragment implements View.OnClickListener {
 
-    private EditText nombreDelEventoTxt;
-    private EditText ubicacionTxt;
-    private EditText hInicioTxt;
-    private EditText hFinTxt;
-    private Button ubicacionBtn;
-    private Button crearEventoBtn;
+    private EditText nombreDelEvento;
+    private TextView ubicacion;
+    private Button crearEventoBtn, inicio, fin;
+    private ImageButton ubicacionBtn;
 
 
     public CreatePostFragment() {
@@ -43,13 +41,13 @@ public class CreatePostFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_publicacion, container, false);
-        nombreDelEventoTxt = view.findViewById(R.id.nombreDelEventoTxt);
-        ubicacionTxt = view.findViewById(R.id.ubicacionTxt);
-        hInicioTxt = view.findViewById(R.id.hInicioTxt);
-        hFinTxt = view.findViewById(R.id.hFinTxt);
+        View view = inflater.inflate(R.layout.fragment_create_post, container, false);
+        nombreDelEvento = view.findViewById(R.id.nameEvent);
+        ubicacion = view.findViewById(R.id.ubicacion);
+        inicio = view.findViewById(R.id.inicioBtn);
+        fin = view.findViewById(R.id.finBtn);
         ubicacionBtn = view.findViewById(R.id.ubicacionBtn);
-        crearEventoBtn = view.findViewById(R.id.crearEventoBtn);
+        crearEventoBtn = view.findViewById(R.id.crearBtn);
 
 
         crearEventoBtn.setOnClickListener(this);
@@ -61,18 +59,8 @@ public class CreatePostFragment extends Fragment implements View.OnClickListener
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.crearEventoBtn:
-                Post post = new Post(nombreDelEventoTxt.getText().toString(), ubicacionTxt.getText().toString(),hInicioTxt.getText().toString(),hFinTxt.getText().toString());
-                Gson gson = new Gson();
-                String json = gson.toJson(post);
+                Post post = new Post(nombreDelEvento.getText().toString(), inicio.getText().toString(),fin.getText().toString(), ubicacion.getText().toString() );
 
-                HTTPSWebUtilDomi https = new HTTPSWebUtilDomi();
-                new Thread(
-                        ()->{
-                            String response = https.PUTrequest(Constants.BASE_URL+"posts/"+post.getNombreEvento()+".json",json);
-                        }
-                ).start();
-
-                break;
         }
     }
 }

@@ -16,6 +16,9 @@ public class Post {
         this.location = location;
     }
 
+    public Post() {
+    }
+
     public String getPostName() {
         return postName;
     }

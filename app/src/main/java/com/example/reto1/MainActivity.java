@@ -13,10 +13,11 @@ public class MainActivity extends AppCompatActivity {
 
     //FRAGMENTS
     private PerfilFragment perfilFragment; // perfil solito
-    private PostWithoutFragment postWithoutFragment; //primer post
     private MapsFragment mapsFragment; //
     private Fragment_perfil_edit perfilEdit; // editar perfil
+    private PostWithoutFragment postWithoutFragment; //frragmento sin publicaciones
     private PublicacionFragment publicacionFragment; // lista de publicaciones
+    private CreatePostFragment createPostFragment; //agregar un post
 
     //elements UI
     private BottomNavigationView bttNavigation;
@@ -39,10 +40,20 @@ public class MainActivity extends AppCompatActivity {
     public void functionMenu(){
         bttNavigation.setOnItemSelectedListener(menuItem -> {
             if(menuItem.getItemId() == R.id.perfilItem){
-                showFragment(perfilFragment);
+                if(true){//ya hay un perfil
+
+                }
+                else{// si no hay perfil
+                    showFragment(perfilFragment);
+                }
             }
             else if(menuItem.getItemId() == R.id.postItem){
-                showFragment(postWithoutFragment);
+                if(){// hay post
+
+                }
+                else{//no hay post
+                    showFragment(postWithoutFragment);
+                }
             }
             else if(menuItem.getItemId() == R.id.mapsItem){
                 showFragment(mapsFragment);

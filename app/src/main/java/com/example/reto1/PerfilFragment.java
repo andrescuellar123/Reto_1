@@ -11,10 +11,16 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import model.Profile;
+
 public class PerfilFragment extends Fragment {
+    //Elementent UI
     private ImageView imageBusinnes;
     private TextView nameBusiness, descriptionBusiness, noImage;
     private ImageButton editBusiness;
+
+    //model
+    private Profile profile;
 
     public PerfilFragment() {
         // Required empty public constructor
