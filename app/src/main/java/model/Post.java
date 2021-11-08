@@ -1,5 +1,7 @@
 package model;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class Post {
 
     private String postName;
@@ -8,12 +10,15 @@ public class Post {
     private String location;
     private String businessName;
     private String UriImage;
-//TODO poner coordenadas, hacer guetter y actualizar construcctor
-    public Post(String postName, String dateStart, String dateEnd, String location) {
+    private LatLng coordenadas;
+
+    //TODO poner coordenadas, hacer guetter y actualizar construcctor
+    public Post(String postName, String dateStart, String dateEnd, String location, LatLng coordedanas) {
         this.postName = postName;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.location = location;
+        this.coordenadas = coordedanas;
     }
 
     public Post() {
@@ -23,47 +28,27 @@ public class Post {
         return postName;
     }
 
-    public void setPostName(String postName) {
-        this.postName = postName;
-    }
-
     public String getDateStart() {
         return dateStart;
-    }
-
-    public void setDateStart(String dateStart) {
-        this.dateStart = dateStart;
     }
 
     public String getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(String dateEnd) {
-        this.dateEnd = dateEnd;
-    }
-
     public String getLocation() {
         return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getBusinessName() {
         return businessName;
     }
 
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
-    }
-
     public String getUriImage() {
         return UriImage;
     }
 
-    public void setUriImage(String uriImage) {
-        UriImage = uriImage;
+    public LatLng getCoordenadas() {
+        return coordenadas;
     }
 }

@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import model.Post;
 
 
@@ -59,7 +61,8 @@ public class CreatePostFragment extends Fragment implements View.OnClickListener
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.crearEventoBtn:
-                Post post = new Post(nombreDelEvento.getText().toString(), inicio.getText().toString(),fin.getText().toString(), ubicacion.getText().toString() );
+
+                Post post = new Post(nombreDelEvento.getText().toString(), inicio.getText().toString(),fin.getText().toString(), ubicacion.getText().toString(),  );
 
         }
     }

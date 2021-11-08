@@ -1,10 +1,12 @@
 package com.example.reto1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.Manifest;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         postWithoutFragment = PostWithoutFragment.newInstance();
         mapsFragment = MapsFragment.newInstance();
 
+        //PERMISOS
+        ActivityCompat.requestPermissions(this, new String[]{
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
 
         showFragment(perfilFragment);
