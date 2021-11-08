@@ -37,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
         //PERMISOS
         ActivityCompat.requestPermissions(this, new String[]{
                 Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.CAMERA,
+                Manifest.permission.MANAGE_EXTERNAL_STORAGE}, 1);
+
 
 
         showFragment(perfilFragment);

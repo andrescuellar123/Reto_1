@@ -7,8 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 public class Fragment_perfil_edit extends Fragment {
+
+    private ImageButton btnCamera;
+
 
     public Fragment_perfil_edit() {
         // Required empty public constructor
@@ -25,7 +29,9 @@ public class Fragment_perfil_edit extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_perfil_edit, container, false);
+        btnCamera = view.findViewById(R.id.btnCamera);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil_edit, container, false);
+        return view;
     }
 }
