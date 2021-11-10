@@ -12,7 +12,7 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
+//TODO hacer todo lo de firebase aqui
     //FRAGMENTS
     private PerfilFragment perfilFragment; // perfil solito
     private MapsFragment mapsFragment; //
