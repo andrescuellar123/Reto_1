@@ -10,6 +10,11 @@ import android.Manifest;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
+import model.Profile;
 
 public class MainActivity extends AppCompatActivity {
 //TODO hacer todo lo de firebase aqui
@@ -20,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private PostWithoutFragment postWithoutFragment; //frragmento sin publicaciones
     private PublicacionFragment publicacionFragment; // lista de publicaciones
     private CreatePostFragment createPostFragment; //agregar un post
+
+    private Profile profile;
 
     //elements UI
     private BottomNavigationView bttNavigation;
@@ -49,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     public void functionMenu(){
         bttNavigation.setOnItemSelectedListener(menuItem -> {
             if(menuItem.getItemId() == R.id.perfilItem){
-                if(true){//ya hay un perfil
+                if(noProfile() == false){//ya hay un perfil
 
                 }
                 else{// si no hay perfil
@@ -76,5 +83,31 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragmentContain, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void addProfile(Profile profile){
+        FirebaseFirestore.getInstance().collection("profile").document(profile.getBusinessName()).set(profile);
+    }
+
+    public Profile getProfile(){
+        Query query = FirebaseFirestore.getInstance().collectionGroup("profile");
+        query.get().addOnCompleteListener(
+                task->{
+                    for(DocumentSnapshot documentSnapshot : task.getResult()){
+                        profile = documentSnapshot.toObject(Profile.class);
+                    }
+                }
+        )
+    }
+
+    public boolean noProfile(){
+        final boolean[] toReturn = {false};
+        Query query = FirebaseFirestore.getInstance().collectionGroup("profile");
+        query.get().addOnCompleteListener(
+                task->{
+                    toReturn[0] = task.getResult().isEmpty();
+                }
+        );
+        return toReturn[0];
     }
 }
