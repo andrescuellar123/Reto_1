@@ -90,8 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public Profile getProfile(){
-        Query query = FirebaseFirestore.getInstance().collectionGroup("profile");
-        query.get().addOnCompleteListener(
+        FirebaseFirestore.getInstance().collection("profile").get().addOnCompleteListener(
                 task->{
                     for(DocumentSnapshot documentSnapshot : task.getResult()){
                         profile = documentSnapshot.toObject(Profile.class);
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean noProfile(){
         final boolean[] toReturn = {false};
-        Query query = FirebaseFirestore.getInstance().collectionGroup("profile");
+        Query query = FirebaseFirestore.getInstance().collection("profile");
         query.get().addOnCompleteListener(
                 task->{
                     toReturn[0] = task.getResult().isEmpty();
