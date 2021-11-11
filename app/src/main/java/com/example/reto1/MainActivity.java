@@ -14,6 +14,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import model.Post;
 import model.Profile;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,24 +49,17 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.CAMERA,
                 Manifest.permission.MANAGE_EXTERNAL_STORAGE}, 1);
 
-
-
         showFragment(perfilFragment);
     }
 
     public void functionMenu(){
         bttNavigation.setOnItemSelectedListener(menuItem -> {
             if(menuItem.getItemId() == R.id.perfilItem){
-                if(noProfile() == false){//ya hay un perfil
-
-                }
-                else{// si no hay perfil
                     showFragment(perfilFragment);
-                }
             }
             else if(menuItem.getItemId() == R.id.postItem){
-                if(){// hay post
-
+                if(noPost() == false){// hay post
+                    showFragment(publicacionFragment);
                 }
                 else{//no hay post
                     showFragment(postWithoutFragment);
@@ -89,15 +83,20 @@ public class MainActivity extends AppCompatActivity {
         FirebaseFirestore.getInstance().collection("profile").document(profile.getBusinessName()).set(profile);
     }
 
-    public Profile getProfile(){
-        FirebaseFirestore.getInstance().collection("profile").get().addOnCompleteListener(
-                task->{
-                    for(DocumentSnapshot documentSnapshot : task.getResult()){
-                        profile = documentSnapshot.toObject(Profile.class);
-                    }
-                }
-        )
+    public void addPost(Post post){
+        FirebaseFirestore.getInstance().collection("posts").document(post.getPostName()).set(post);
     }
+
+   public boolean noPost(){
+       final boolean[] toReturn = {false};
+       Query query = FirebaseFirestore.getInstance().collection("post");
+       query.get().addOnCompleteListener(
+               task->{
+                   toReturn[0] = task.getResult().isEmpty();
+               }
+       );
+       return toReturn[0];
+   }
 
     public boolean noProfile(){
         final boolean[] toReturn = {false};
@@ -109,4 +108,6 @@ public class MainActivity extends AppCompatActivity {
         );
         return toReturn[0];
     }
+
+
 }

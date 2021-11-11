@@ -11,6 +11,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import model.Profile;
 
 public class PerfilFragment extends Fragment {
@@ -44,6 +47,22 @@ public class PerfilFragment extends Fragment {
         nameBusiness = view.findViewById(R.id.nameBusiness);
         descriptionBusiness = view.findViewById(R.id.descripBusiness);
         noImage = view.findViewById(R.id.noImage);
+        getProfile();
+        if(profile != null){
+            //modifico las vistas con las del usuario que esta clas escucho
+        }
+
         return view;
+    }
+
+
+    public void getProfile(){
+        FirebaseFirestore.getInstance().collection("profile").get().addOnCompleteListener(
+                task->{
+                    for(DocumentSnapshot documentSnapshot : task.getResult()){
+                        profile = documentSnapshot.toObject(Profile.class);
+                    }
+                }
+        );
     }
 }
